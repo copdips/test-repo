@@ -12,5 +12,5 @@ def retry[T](fn: Callable[[], T], attempts: int = 3) -> T:
         except Exception:
             if i == attempts - 1:
                 raise
-            time.sleep(1)
+            time.sleep(2**i)
     raise AssertionError("unreachable")
